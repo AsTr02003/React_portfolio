@@ -1,6 +1,6 @@
 import React from 'react';
-import Project1 from '../assets/project1.png'
-import Project2 from '../assets/project2.png'
+import Project1 from '../assets/project_manager.png'
+import Project2 from '../assets/user_directory.png'
 import Project3 from '../assets/project3.png'
 import { motion } from 'framer-motion';
 
@@ -15,15 +15,18 @@ const Project = () => {
                 <motion.div whileInView={{opacity:1, x:0}}
         initial={{opacity:0, x:-100}}
         transition={{duration:1.5}} className="w-full lg:w-1/4">
-                    <img src={Project1}  className='mb-6 rounded' alt="Dodge" />
+                    <img src={Project1}  className='mb-6 rounded' alt="PM" />
                 </motion.div>
                 <motion.div whileInView={{opacity:1, x:0}}
         initial={{opacity:0, x:100}}
         transition={{duration:1.5}} className='w-full max-w-xl ml-40 lg:w-3/4'>
-                    <h6 className='font-bold text-xl'>Dodge Wikipedia</h6>
-                    <p className='mb-4 text-neutral-400'>Dodge Wikipedia is an informative website designed with HTML and CSS, offering users a sleek and responsive interface to access and navigate various Wikipedia topics efficiently.</p>
-                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-400'>HTML</span>
-                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-400'>CSS </span>
+                    <h6 className='font-bold text-xl'>Task Manager</h6>
+                    <p className='mb-4 text-neutral-400'>Developed a MERN stack-based task management app for managing projects, tasks, and bugs with user creation and team assignment features. Enhanced project tracking and task delegation, improving team collaboration and operational efficiency.</p>
+                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-200'>MongoDB</span>
+                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-200'>ExpressJS </span>
+                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-200'>ReactJS+Vite </span>
+                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-200'>NodeJS </span>
+                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-200'>Tailwind CSS </span>
                 </motion.div>
             </div>
         </div>
@@ -37,11 +40,14 @@ const Project = () => {
                 <motion.div whileInView={{opacity:1, x:0}}
         initial={{opacity:0, x:100}}
         transition={{duration:1.5}} className='w-full max-w-xl ml-40 lg:w-3/4'>
-                    <h6 className='font-bold text-xl'>Sorting Visualizer V.1</h6>
-                    <p className='mb-4 text-neutral-400'>Sorting Visualizer is an interactive web application built with HTML, CSS, and JavaScript, allowing users to visually understand and compare different sorting algorithms in real-time.</p>
-                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-400'>HTML</span>
-                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-400'>CSS </span>
-                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-400'>JS </span>
+                    <h6 className='font-bold text-xl'>User Directory</h6>
+                    <p className='mb-4 text-neutral-400'>Built a scalable user directory using the MERN stack with efficient handling of large datasets, supporting pagination, filters, and global search functionality. Integrated role-based access control for admin and regular users, ensuring secure and tailored access to data and CRUD
+operations.</p>
+<span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-200'>MongoDB</span>
+                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-200'>ExpressJS </span>
+                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-200'>ReactJS+Vite </span>
+                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-200'>NodeJS </span>
+                    <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-200'>Tailwind CSS </span>
                 </motion.div>
             </div>
         </div>
@@ -55,7 +61,7 @@ const Project = () => {
                 <motion.div whileInView={{opacity:1, x:0}}
         initial={{opacity:0, x:100}}
         transition={{duration:1.5}} className='w-full max-w-xl ml-40 lg:w-3/4'>
-                    <h6 className='font-bold text-xl'>Sorting Visualizer V.2</h6>
+                    <h6 className='font-bold text-xl'>Sorting Visualizer</h6>
                     <p className='mb-4 text-neutral-400'>Sorting Visualizer is an interactive web application developed with ReactJS, enabling users to visually explore and compare various sorting algorithms in real-time.</p>
                     <span className='mr-2 mt-4 rounded bg-neutral-600 px-2 py-1 text-sm font-medium text-purple-400'>ReactJS</span>
                 </motion.div>

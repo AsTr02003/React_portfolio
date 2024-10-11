@@ -5,7 +5,7 @@ import { FaSquareXTwitter } from 'react-icons/fa6';
 import { FaInstagram } from 'react-icons/fa';
 import { FaDownload } from 'react-icons/fa';
 import logo from '../assets/logo.png'
-import resume from '../assets/Abhishek_Resume.pdf';
+import resume from "../assets/Abhishek_Resume_08_10_2024_.pdf";
 
 
 const Navbar = () => {

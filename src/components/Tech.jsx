@@ -5,18 +5,18 @@ import { SiMongodb } from 'react-icons/si';
 import { motion } from "framer-motion"
 
 
-// const iconVari = (duration) =>({
-//     initial: {y:-10},
-//     animate:{
-//         y:[10,-10],
-//         transition:{
-//             duration: duration,
-//             ease:"linear",
-//             repeat: Infinity,
-//             repeatType:"reverse"
-//         },
-//     },
-// });
+const iconVari = (duration) =>({
+    initial: {y:-10},
+    animate:{
+        y:[10,-10],
+        transition:{
+            duration: duration,
+            ease:"linear",
+            repeat: Infinity,
+            repeatType:"reverse"
+        },
+    },
+});
 
 const Tech = () => {
   return (
@@ -41,8 +41,7 @@ const Tech = () => {
             </motion.div>
             <motion.div initial={{y:-10}} animate={{y:[10,10], transition:{duration:4.5, ease:"linear", repeat:Infinity, repeatType:"reverse" }}} className='rounded-2xl border-4 p-4 border-neutral-800'>
                 <TbBrandJavascript className='text-7xl text-yellow-500'/>
-            </motion.div>
-            
+            </motion.div> 
         </motion.div>
     </div>
   ) 

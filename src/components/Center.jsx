@@ -10,8 +10,8 @@ const Center = () => {
                 <div className="flex flex-col items-center lg:items-start">
                     <motion.h1 initial={{x:-100, opacity:0}} animate={{x:0, opacity:1}} transition={{duration:0.5, delay:0 }} className='pb-16 text-6xl font-normal tracking-tight lg:mt-16 lg:text-8xl'>Abhishek Joshi</motion.h1>
                     <motion.span initial={{x:-100, opacity:0}} animate={{x:0, opacity:1}} transition={{duration:0.5, delay:0.5 }}
-                    className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent'>Front-End Developer</motion.span>
-                    <motion.p initial={{x:-100, opacity:0}} animate={{x:0, opacity:1}} transition={{duration:0.5, delay:1 }} className='my-2 max-w-xl py-6 font-light text-xl tracking-tighter'>I am a passionate Front-End developer with a knack for crafting robust and scalable web applications. I have honed my skills in front-end technologies like React and Next.js. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.</motion.p>
+                    className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent'>Full Stack Developer</motion.span>
+                    <motion.p initial={{x:-100, opacity:0}} animate={{x:0, opacity:1}} transition={{duration:0.5, delay:1 }} className='my-2 max-w-xl py-6 font-light text-xl tracking-tighter'>I am a dedicated Full Stack developer with expertise in building scalable web applications using the MERN stack. My focus is on creating seamless user experiences, efficient backend systems, and delivering solutions that drive business growth and performance.</motion.p>
                 </div>
             </div>
             
