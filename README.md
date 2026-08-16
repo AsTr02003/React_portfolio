@@ -80,6 +80,34 @@ ALLOW_PLACEHOLDER_CONTENT=1 npm run build   # downgrades the error to a warning
 
 ## Deploying
 
-Builds to fully static output; any host works. On Vercel, import the repo and
-accept the defaults. Set `site.url` in `content/site.ts` to the final domain
-first — OG tags, canonical URL and the sitemap all derive from it.
+Builds to fully static output; any host works.
+
+### Vercel
+
+Import the repo — `vercel.json` supplies the rest. No environment variables are
+required for the first deploy.
+
+| File             | Does                                                                                     |
+| ---------------- | ---------------------------------------------------------------------------------------- |
+| `vercel.json`    | Framework, `bom1` region, security headers, cache policy, `/resume` → PDF redirect        |
+| `.vercelignore`  | Keeps build artefacts and editor state out of the upload                                   |
+| `.env.example`   | Documents the two optional variables                                                       |
+
+**Origin resolution.** `site.url` is no longer hardcoded — it resolves at build
+time from `NEXT_PUBLIC_SITE_URL`, then Vercel's own
+`VERCEL_PROJECT_PRODUCTION_URL`, then `http://localhost:3000`. So the
+`*.vercel.app` deploy already emits correct absolute OG, canonical and sitemap
+URLs. When a custom domain is attached, add `NEXT_PUBLIC_SITE_URL` in **Project
+→ Settings → Environment Variables** (Production scope) and redeploy.
+
+**Headers.** HSTS is `max-age=31536000; includeSubDomains` without `preload`
+— preload is a hard commitment to serve every subdomain over HTTPS forever, so
+it is opt-in. `/images/*` gets a one-day CDN cache with
+`stale-while-revalidate` rather than `immutable`, because those filenames are
+not content-hashed and a replaced `profile.png` should not be stuck in caches.
+
+### Anywhere else
+
+`npm run build && npm start`, or serve the prerendered output directly. Set
+`NEXT_PUBLIC_SITE_URL` at build time; without it the metadata falls back to
+localhost.

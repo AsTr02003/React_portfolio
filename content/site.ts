@@ -1,13 +1,35 @@
 import type { Achievement, Education, Metric, Social } from '@/lib/types'
 
+/**
+ * Canonical origin, resolved at build time so a deploy is correct before a
+ * custom domain exists:
+ *
+ *   1. NEXT_PUBLIC_SITE_URL — set this once the real domain is attached.
+ *   2. VERCEL_PROJECT_PRODUCTION_URL — injected by Vercel on every build, so
+ *      the *.vercel.app deploy and previews still emit absolute URLs.
+ *   3. localhost, for `npm run dev`.
+ *
+ * Only ever read on the server (metadata, OG image, robots, sitemap), so the
+ * non-public Vercel variable is safe to use here.
+ */
+function resolveSiteUrl(): string {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL
+  if (explicit) return explicit.replace(/\/+$/, '')
+
+  const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  if (vercel) return `https://${vercel}`
+
+  return 'http://localhost:3000'
+}
+
 export const site = {
   name: 'Abhishek Joshi',
   title: 'Software Engineer I',
   company: 'Mocha Technologies',
   location: 'Mumbai, India',
 
-  /** TODO: point at your real domain — OG tags, canonical URL and sitemap derive from this. */
-  url: 'https://abhishekjoshi.dev',
+  /** OG tags, canonical URL and the sitemap derive from this. See resolveSiteUrl. */
+  url: resolveSiteUrl(),
 
   tagline:
     'I build across the stack — Flutter clients, Laravel and Node services, and the React interfaces on top of them.',

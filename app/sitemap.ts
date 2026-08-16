@@ -1,13 +1,24 @@
 import type { MetadataRoute } from 'next'
 import { site } from '@/content/site'
+import { getCaseStudySlugs } from '@/content/projects'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date()
+
   return [
     {
       url: site.url,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'monthly',
       priority: 1,
     },
+    // Case-study routes are generated from content, so they cannot fall out of
+    // sync with what actually prerenders under /work.
+    ...getCaseStudySlugs().map((slug) => ({
+      url: `${site.url}/work/${slug}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
   ]
 }

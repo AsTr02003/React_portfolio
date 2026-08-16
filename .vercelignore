@@ -1,0 +1,11 @@
+# Nothing here is needed to build the site — Vercel installs and builds remotely.
+node_modules
+.next
+out
+
+.claude
+.vscode
+.idea
+
+*.log
+tsconfig.tsbuildinfo
