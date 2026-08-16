@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm test *)",
+      "Bash(git add *)",
+      "Bash(git restore *)",
+      "PowerShell(Get-Process node -ErrorAction SilentlyContinue | Select-Object Id, StartTime, @{n='Cmd';e={\\(Get-CimInstance Win32_Process -Filter \"ProcessId=$\\($_.Id\\)\"\\).CommandLine}} | Format-List; \"--- listeners ---\"; Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $_.LocalPort -in 3000,3001,3002 } | Select-Object LocalPort, OwningProcess)",
+      "PowerShell('2372','21228','23628' | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }; Start-Sleep -Seconds 2; if \\(Get-Process node -ErrorAction SilentlyContinue\\) { \"still running:\"; Get-Process node | Select-Object Id } else { \"all node stopped - .next is free\" })"
+    ]
+  }
+}
